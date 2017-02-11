@@ -19,11 +19,18 @@ export AWS_DEFAULT_REGION=<your region>
 3. Optionally set other environment variable to change resource names or labels
 
 - `NAMESPACE` defaults to 'kube-system'
-- `APP_NAME` defaults to 'fluentd-cloudwatch'
-- `SECRET_NAME` defaults to 'fluentd-cloudwatch'
-- `CONFIG_NAME` defaults to 'fluentd-cloudwatch'
+- `APP_NAME`,`SECRET_NAME`,`CONFIG_NAME` default to 'fluentd-cloudwatch'
 - `ENV_NAME` defaults to 'system'
 
 4. Run `Deploy.sh` to create the Secret, ConfigMap, and DaemonSet
 
 5. Run `Display.sh` to check everything is running
+
+## Removal
+
+1. If you set custom values for the namespace or resource name environment variables, 
+ensure they are still set to your values (`NAMESPACE`,`APP_NAME`,`SECRET_NAME`,`CONFIG_NAME`)
+
+2. Run `Delete.sh`
+
+3. Run `Display.sh` to check nothing is left
